@@ -38,6 +38,12 @@ public class Expression {
 
     public void setResult(double result) {
         this.result = result;
+        printResult();
+    }
+
+    public void setResult(double result, String printType) {
+        this.result = result;
+        printResult(printType);
     }
 
     public void getNumbers(double numbers) {

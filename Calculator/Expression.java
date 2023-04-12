@@ -6,8 +6,9 @@ public class Expression {
     static final String sentinel = "stop";
     private double result, num1, num2;
     private String operation;
-    private Scanner scan;
+    private final Scanner scan;
     private boolean clear, showHistory;
+    private static final History history = new History();
 
 
     public Expression(Scanner scan) {
@@ -16,19 +17,22 @@ public class Expression {
 
     public void printResult() {
         if(!clear) {
-            System.out.println("" + num1 + " " + operation + " " + num2 + " is: " + result);
+            String output = "" + num1 + " " + operation + " " + num2 + " is: " + result;
+            history.addHistory(output + "\n");
+            System.out.println(output);
         }
         if(showHistory) {
-            
+            history.showHistory();
         }
     }
 
     public void printResult(String prompt) {
         if(!clear) {
+            history.addHistory(prompt + "\n");
             System.out.println(prompt);
         }
         if(showHistory) {
-
+            history.showHistory();
         }
     }
 
@@ -106,5 +110,13 @@ public class Expression {
             internalClear = true;
         }
         return internalClear;
+    }
+
+    public double getNum1() {
+        return num1;
+    }
+
+    public double getNum2() {
+        return num2;
     }
 }

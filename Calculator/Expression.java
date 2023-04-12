@@ -36,13 +36,15 @@ public class Expression {
         }
     }
 
-    public void setResult(double result) {
+    public void setResult(double result, String operation) {
         this.result = result;
+        this.operation = operation;
         printResult();
     }
 
-    public void setResult(double result, String printType) {
+    public void setResult(double result, String operation, String printType) {
         this.result = result;
+        this.operation = operation;
         printResult(printType);
     }
 

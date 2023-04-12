@@ -10,6 +10,5 @@ public class Main {
         System.out.println("\nEnter a function or operation");
 
         input = scan.nextLine().toLowerCase();
-        
     }
 }

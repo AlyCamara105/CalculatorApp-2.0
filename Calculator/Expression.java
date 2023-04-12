@@ -42,7 +42,7 @@ public class Expression {
         printResult();
     }
 
-    public void setResult(double result, String operation, String printType) {
+    public void setResult2(double result, String printType) {
         this.result = result;
         this.operation = operation;
         printResult(printType);
